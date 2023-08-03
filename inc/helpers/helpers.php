@@ -6,9 +6,60 @@ function dd($content) {
     wp_die();
 }
 
+function get_custom_thumbnail($post_id, $size = "thumbnail", $additional_attributes) {
+    $custom_thumbnail = "";
+
+    if($post_id === null) {
+        $post_id = get_the_ID();
+    }
+
+    if( has_post_thumbnail( $post_id ) ) {
+        
+        $default_attributes = [];
+        
+        $attributes = array_merge($additional_attributes, $default_attributes);
+
+        $custom_thumbnail = wp_get_attachment_image(
+            get_post_thumbnail_id( $post_id ),
+            $size,
+            false,
+            $attributes
+        );
+    }
+
+    return $custom_thumbnail;
+
+}
+
+function the_custom_thumbnail($post_id, $size, $additional_attributes) {
+    echo get_custom_thumbnail($post_id, $size, $additional_attributes);
+}
+
 function without_hyphen_lowercase( $string ) {
     $lower_case = strtolower( $string );
     return str_replace( "-", " ", $lower_case );
+}
+
+function blog_posted_on() {
+    $get_time = '<time datetime="%1$s" class="published updated">%2$s</time>';
+
+    // The blog post has been modified
+    if( get_the_time( "U" ) !== get_the_modified_time( "U" )) {
+        $get_time = '
+            <time datetime="%1$s" class="published">%2$s</time>
+            <time datetime="%3$s" class="updated">%4$s</time>
+        ';
+    }
+
+    $posted_on = sprintf(
+        $get_time, 
+        esc_attr( get_the_date( DATE_W3C ) ),
+        esc_attr( get_the_date( "d/m/Y" ) ),
+        esc_attr( get_the_modified_date( DATE_W3C ) ),
+        esc_attr( get_the_modified_date() )
+    );
+
+    echo $posted_on;
 }
 
 ?>

@@ -5,12 +5,9 @@
             <div class="row">
                 <div class="col-lg-8 blog-container row gap-4">
 
+                <?php while( have_posts() ) : the_post() ?>
                     <?php get_template_part("template_parts/components/blog") ?>                    
-                    <?php get_template_part("template_parts/components/blog") ?>                    
-                    <?php get_template_part("template_parts/components/blog") ?>                    
-                    <?php get_template_part("template_parts/components/blog") ?>                    
-                    <?php get_template_part("template_parts/components/blog") ?>                    
-
+                <?php endwhile; ?>
                 </div>
                 <aside class="col-lg-4">
                     <div class="categories">

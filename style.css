@@ -1320,3 +1320,19 @@ footer {
         height: 250px;
     }
 }
+/**************** WORDPRESS EXCLUSIVE STYLE *****************/
+
+.updated:not(.published) {
+    display: none;
+}
+.blog-header {
+    position: relative;
+}
+.blog-image {
+    position: absolute;
+    top:0px;
+}
+.blog-image img {
+    height: 100%;
+    width: 100%;
+}

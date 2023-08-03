@@ -32,6 +32,14 @@ class TEVENT_THEME {
             'header-text' => [ 'tevent', 'where everone sings' ]
         ] );
 
+        add_theme_support( "post-thumbnails" );
+
+        add_theme_support( "title-tag" );
+
+        if(function_exists("add_image_size")) {
+            add_image_size( "large", 282, 250, true );
+        }
+
     }
 
 }
