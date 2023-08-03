@@ -26,7 +26,7 @@ class Menus {
     public function get_nav_menu_id( $location ) {
         $locations = get_nav_menu_locations();
 
-        return $locations[ $location ];
+        return ( array_key_exists( $location, $locations ) )? $locations[ $location ] : "";
         
     }
 

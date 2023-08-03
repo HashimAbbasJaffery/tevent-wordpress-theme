@@ -40,7 +40,7 @@ function without_hyphen_lowercase( $string ) {
     return str_replace( "-", " ", $lower_case );
 }
 
-function blog_posted_on() {
+function blog_posted_on($format = "d/m/y") {
     $get_time = '<time datetime="%1$s" class="published updated">%2$s</time>';
 
     // The blog post has been modified
@@ -54,7 +54,7 @@ function blog_posted_on() {
     $posted_on = sprintf(
         $get_time, 
         esc_attr( get_the_date( DATE_W3C ) ),
-        esc_attr( get_the_date( "d/m/Y" ) ),
+        esc_attr( get_the_date( $format ) ),
         esc_attr( get_the_modified_date( DATE_W3C ) ),
         esc_attr( get_the_modified_date() )
     );

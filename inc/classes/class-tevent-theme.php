@@ -37,7 +37,7 @@ class TEVENT_THEME {
         add_theme_support( "title-tag" );
 
         if(function_exists("add_image_size")) {
-            add_image_size( "large", 282, 250, true );
+            add_image_size( "large", 282, 50, true );
         }
 
     }

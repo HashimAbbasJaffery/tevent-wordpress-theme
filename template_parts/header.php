@@ -51,24 +51,26 @@
             </div>
             <div id="navigation">
                 <nav class="nav-bar" id="slide-navbar">
-                    <ul>
-                        <?php 
+                        <ul>
+                            <?php 
 
-                            // Getting instance from singleton
+                                // Getting instance from singleton
 
-                            $menus = \TEVENT_THEME\Inc\Menus::get_instance();
+                                $menus = \TEVENT_THEME\Inc\Menus::get_instance();
 
-                            // Getting id from the navigation
-                            $location = $menus->get_nav_menu_id( "header" );
+                                // Getting id from the navigation
+                                $location = $menus->get_nav_menu_id( "header" );
 
-                            $items = wp_get_nav_menu_items( $location );
-                            ?>
-                        <?php foreach($items as $item): ?>
-                            <?php if(!$pagename) $pagename = "home" ?>
-                            <li><a href="<?php echo $item->url; ?>" class='<?php echo ( without_hyphen_lowercase( $pagename ) === without_hyphen_lowercase( $item->title ) )  ? "active" : "" ?>'><?php echo $item->title; ?></a></li>
-                        <?php endforeach; ?>
-                        <li id="register-nav-btn"><a href="#">Register</a></li>
-                    </ul>
+                                $items = wp_get_nav_menu_items( $location );
+                                ?>
+                            <?php if( $items ): ?>
+                                <?php foreach($items as $item): ?>
+                                    <?php if(!$pagename) $pagename = "home" ?>
+                                    <li><a href="<?php echo $item->url; ?>" class='<?php echo ( without_hyphen_lowercase( $pagename ) === without_hyphen_lowercase( $item->title ) )  ? "active" : "" ?>'><?php echo $item->title; ?></a></li>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                            <li id="register-nav-btn"><a href="#">Register</a></li>
+                        </ul>
                 </nav>
             </div>
         </header>

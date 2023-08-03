@@ -715,9 +715,12 @@ header {
     padding-left: 20px;
     padding-right: 20px;
 }
-.blog-footer button {
+.blog-footer a {
+    text-decoration: none;
     background: #e12a6e;
     font-weight: bold;
+    display: inline-block;
+    margin-bottom: 30px;
     color: white;
     font-size: 12px;
     border: none;
@@ -725,6 +728,10 @@ header {
     padding: 15px 25px 15px 25px;
     text-transform: uppercase;
     border-radius: 4px;
+}
+.blog-footer a:hover {
+    background-color: #db3b76;
+    color: white;
 }
 
 .meta :last-child {
@@ -1328,11 +1335,16 @@ footer {
 .blog-header {
     position: relative;
 }
-.blog-image {
+.posted-on {
     position: absolute;
-    top:0px;
 }
-.blog-image img {
+.blog-image img,
+.single-blog-picture img {
     height: 100%;
+    width: 100%;
+}
+.blog-image {
+    background-color: yellow;
+    margin-right: 0px;
     width: 100%;
 }
