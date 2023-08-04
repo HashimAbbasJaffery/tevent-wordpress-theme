@@ -31,7 +31,8 @@
                     <p><?php wp_strip_all_tags( wp_get_excerpt(100) ); ?></p>
                 </div>
                 <div class="blog-footer">
-                    <a href="<?php the_permalink() ?>">read more</a>
+                    <!-- <a href="<?php the_permalink() ?>">read more</a> -->
+                    <?php tevent_more_button(); ?>
                 </div>
             </div>
         </div>

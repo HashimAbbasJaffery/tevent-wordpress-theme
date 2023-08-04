@@ -87,4 +87,16 @@ function wp_get_excerpt( $limited_characters = 0 ) {
     echo $excerpt . "[...]";
 }
 
+function tevent_more_button() {
+    $more = '<a href="%1$s">%2$s</a>';
+    if( !is_single() ) {
+        $more = sprintf(
+            $more,
+            get_the_permalink(),
+            __("Read more")
+        );
+    };
+    echo $more;
+}
+
 ?>
