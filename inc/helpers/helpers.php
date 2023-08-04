@@ -76,15 +76,15 @@ function get_nav_items( $nav_name ) {
     return $items;
 }
 
-function wp_get_excerpt( $limited_characters = 0 ) {
-    if( !has_excerpt() || $limited_characters == 0) {
-        the_excerpt();
-        return;
-    }
-
+function tevent_get_excerpt( $limited_characters ) {
     $excerpt = substr( get_the_excerpt(), 0, $limited_characters );
     $excerpt = substr( $excerpt, 0, strrpos($excerpt, " ") );
-    echo $excerpt . "[...]";
+
+    return $excerpt . " [...]";
+}
+
+function wp_get_excerpt( $limited_characters = 0 ) {
+    echo tevent_get_excerpt($limited_characters);
 }
 
 function tevent_more_button() {
