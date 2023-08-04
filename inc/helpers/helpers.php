@@ -62,4 +62,18 @@ function blog_posted_on($format = "d/m/y") {
     echo $posted_on;
 }
 
+function get_nav_items( $nav_name ) {
+    $list = "";
+    // Getting instance from singleton
+
+    $menus = \TEVENT_THEME\Inc\Menus::get_instance();
+
+    // Getting id from the navigation
+    $location = $menus->get_nav_menu_id( $nav_name );
+    
+    $items = wp_get_nav_menu_items( $location );
+
+    return $items;
+}
+
 ?>

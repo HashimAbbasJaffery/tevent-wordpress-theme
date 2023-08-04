@@ -21,29 +21,15 @@
                             </div>
                             <div class="recent-blogs">
                                 <h1>recent blog posts</h1>
-                                <div class="recent-blog">
-                                    <div class="recent-blog-thumbnail">&nbsp;</div>
-                                    <div class="recent-blog-info">
-                                        <time datetime="2003-03-17">17 March, 2003</time>
-                                        <h2>Lorem, ipsum dolor.</h2>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, placeat.</p>
-                                    </div>
-                                </div>
-                                <div class="recent-blog">
-                                    <div class="recent-blog-thumbnail">&nbsp;</div>
-                                    <div class="recent-blog-info">
-                                        <time datetime="2003-03-17">17 March, 2003</time>
-                                        <h2>Lorem, ipsum dolor.</h2>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, placeat.</p>
-                                    </div>
-                                </div>
-                                <div class="recent-blog">
-                                    <div class="recent-blog-thumbnail">&nbsp;</div>
-                                    <div class="recent-blog-info">
-                                        <time datetime="2003-03-17">17 March, 2003</time>
-                                        <h2>Lorem, ipsum dolor.</h2>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, placeat.</p>
-                                    </div>
-                                </div>
+                                    <?php 
+                                        rewind_posts();
+                                        query_posts([
+                                            "posts_per_page" => 3,
+                                            "post__not_in" => [( !is_home() )? get_the_ID() : ""]
+                                        ]);
+                                    ?>
+                                    <?php while( have_posts() ) : the_post() ?>
+                                        <?php get_template_part("template_parts/components/recentBlogs") ?>                    
+                                    <?php endwhile; ?>
                             </div>
                         </aside>

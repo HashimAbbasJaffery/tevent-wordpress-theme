@@ -3,7 +3,7 @@
     <section id="blog-list">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 blog-container row gap-4">
+                <div class="col-lg-8 blog-container row gap-2">
 
                 <?php while( have_posts() ) : the_post() ?>
                     <?php get_template_part("template_parts/components/blog") ?>                    

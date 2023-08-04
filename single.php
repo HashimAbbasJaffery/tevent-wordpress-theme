@@ -6,7 +6,7 @@
             <?php wp_body_open(); ?>
             <section id="blog-list">
                 <div class="container">
-                    <div class="row gap-4">
+                    <div class="row gap-3">
                         <div class="col-lg-8 blog-container single-blog row ">
                             <div class="single-blog-header">
                                 <div class="single-blog-picture">
