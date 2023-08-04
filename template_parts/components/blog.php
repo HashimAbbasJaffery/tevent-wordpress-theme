@@ -28,7 +28,7 @@
                 </div>
                 <div class="blog-detail">
                     <h2><?php the_title(); ?></h2>
-                    <p><?php the_excerpt(); ?></p>
+                    <p><?php wp_strip_all_tags( wp_get_excerpt(100) ); ?></p>
                 </div>
                 <div class="blog-footer">
                     <a href="<?php the_permalink() ?>">read more</a>

@@ -12,7 +12,7 @@
             <?php the_title(); ?>
         </h2>
         <p>
-            <?php echo substr(get_the_excerpt(), 30) ?>&nbsp;
+            <?php wp_get_excerpt(50) ?>&nbsp;
         </p>
     </div>
 </div>
