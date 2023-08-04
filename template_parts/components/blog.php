@@ -18,7 +18,15 @@
                 <div class="meta-blog">
                     <div class="category meta">
                         <i class="fa-regular fa-folder"></i>
-                        <p>Business</p>
+                        <?php 
+                            $i = 0;
+                            $categories = tevent_get_post_terms( "category" );
+                            foreach( $categories as $key => $category ):
+                                $i++;
+                        ?>
+                            <p><a href="<?php echo esc_url( get_term_link( $category ) ) ?>"><?php echo esc_html__( $category->name ) ?></a></p>
+                            <?php echo ( $i < count($categories) ) ? ",&nbsp;" : ""; ?>
+                        <?php endforeach; ?>
                     </div>
                     <div class="user meta">
                         <i class="fa-regular fa-user"></i>

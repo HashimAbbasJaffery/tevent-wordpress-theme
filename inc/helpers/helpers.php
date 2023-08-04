@@ -99,4 +99,36 @@ function tevent_more_button() {
     echo $more;
 }
 
+function tevent_get_post_terms( $taxonomy ) {
+
+    $the_post_id = get_the_ID();
+    $terms = wp_get_post_terms( $the_post_id, $taxonomy );
+    
+    return $terms;
+
+}
+
+function tevent_pagination() {
+
+    // Allowed html 
+
+    $allowed_html = [
+        "span" => [
+            "class" => []
+        ],
+        "a" => [
+            "class" => [],
+            "href" => []
+        ]
+    ];
+    
+    // What should be before the page number
+    $args = [
+        'before_page_number' => '<span>',
+        'after_page_number' => '</span>'
+    ];
+    // Printing the pagination
+    printf("<nav class='pagination'>%s</nav>", wp_kses( paginate_links( $args ), $allowed_html ));
+}
+
 ?>
