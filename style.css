@@ -955,12 +955,15 @@ footer {
 .categories {
     margin-bottom: 70px;
 }
-.categories h1, .recent-blogs h1 {
+.widget_block h2 {
     font-size: 20px;
     font-family: "Raleway", "sans-serif";
     text-transform: uppercase;
     font-weight: bold;
     margin-bottom: 50px;
+}
+.wp-block-categories {
+    padding: 0px;
 }
 .categories nav ul li a {
     text-transform: capitalize;

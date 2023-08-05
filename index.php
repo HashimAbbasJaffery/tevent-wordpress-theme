@@ -10,8 +10,7 @@
                         <?php get_template_part("template_parts/components/blog") ?>
                     <?php endwhile; ?>
                 </div>
-
-                <?php get_template_part("template_parts/components/sidebar") ?>
+                <?php get_sidebar(); ?>
             </div>
 
             <div id="pagination">

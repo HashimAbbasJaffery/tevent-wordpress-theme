@@ -13,6 +13,7 @@ class TEVENT_THEME {
     protected function __construct() {
         Assets::get_instance();
         Menus::get_instance();
+        Sidebars::get_instance();
 
         $this->set_hooks();
     }
