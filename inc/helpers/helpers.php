@@ -70,6 +70,20 @@ function get_nav_items( $nav_name ) {
 
     // Getting id from the navigation
     $location = $menus->get_nav_menu_id( $nav_name );
+
+    if( !$location ) {
+        $message = "no menu";
+        if( current_user_can( "administrator" ) ) {
+            $message = sprintf(
+                __( 'Create the nav manu named %1$s from <a href="%2$s">here!</a>' ), 
+                $nav_name,
+                esc_url( home_url() . "/wp-admin/nav-menus.php" )
+            );
+        } 
+        return [
+            "missing_name" => $message 
+        ];
+    }
     
     $items = wp_get_nav_menu_items( $location );
 

@@ -26,7 +26,7 @@
                             </div>
                             <div class="single-blog-footer">&nbsp;</div>
                         </div>
-                        <?php get_template_part("template_parts/components/sidebar") ?>
+                        <?php get_sidebar() ?>
                     </div>
                 </div>
             </section>

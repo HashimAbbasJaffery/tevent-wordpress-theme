@@ -15,40 +15,61 @@
                     <nav class="footer-nav">
                         <ul>
                             <?php
-                            foreach (get_nav_items("footer-services") as $item):
-                                ?>
+                                $nav_items = get_nav_items("footer-services");
+                                if(!isset($nav_items["missing_name"])):
+                                    foreach ($nav_items as $item):
+                            ?>
                                 <li><a href="#">
                                         <?php echo $item->title ?>
                                     </a></li>
-                            <?php endforeach; ?>
+                            <?php 
+                                    endforeach; 
+                                else:
+                                    echo $nav_items["missing_name"];
+                                endif;
+                            ?>
                         </ul>
                     </nav>
                 </div>
                 <div class="col-lg-4 none company additional-detail">
                     <h1 class="row-heading">company</h1>
                     <nav class="footer-nav">
-                        <ul>
+                    <ul>
                             <?php
-                            foreach (get_nav_items("footer-company") as $item):
-                                ?>
+                                $nav_items = get_nav_items("footer-company");
+                                if(!isset($nav_items["missing_name"])):
+                                    foreach ($nav_items as $item):
+                            ?>
                                 <li><a href="#">
-                                        <?php echo $item->title; ?>
+                                        <?php echo $item->title ?>
                                     </a></li>
-                            <?php endforeach; ?>
+                            <?php 
+                                    endforeach; 
+                                else:
+                                    echo $nav_items["missing_name"];
+                                endif;
+                            ?>
                         </ul>
                     </nav>
                 </div>
                 <div class="col-lg-4 links none additional-detail">
                     <h1 class="row-heading">links</h1>
                     <nav class="footer-nav">
-                        <ul>
+                    <ul>
                             <?php
-                            foreach (get_nav_items("footer-links") as $item):
-                                ?>
+                                $nav_items = get_nav_items("footer-links");
+                                if(!isset($nav_items["missing_name"])):
+                                    foreach ($nav_items as $item):
+                            ?>
                                 <li><a href="#">
-                                        <?php echo $item->title; ?>
+                                        <?php echo $item->title ?>
                                     </a></li>
-                            <?php endforeach; ?>
+                            <?php 
+                                    endforeach; 
+                                else:
+                                    echo $nav_items["missing_name"];
+                                endif;
+                            ?>
                         </ul>
                     </nav>
                 </div>
