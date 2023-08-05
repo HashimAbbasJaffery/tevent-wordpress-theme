@@ -76,19 +76,19 @@ function get_nav_items( $nav_name ) {
     return $items;
 }
 
-function tevent_get_excerpt( $limited_characters ) {
+function wp_get_excerpt( $limited_characters = 0 ) {
+    if( !has_excerpt() || $limited_characters == 0) {
+        the_excerpt();
+        return;
+    }
+
     $excerpt = substr( get_the_excerpt(), 0, $limited_characters );
     $excerpt = substr( $excerpt, 0, strrpos($excerpt, " ") );
-
-    return $excerpt . " [...]";
-}
-
-function wp_get_excerpt( $limited_characters = 0 ) {
-    echo tevent_get_excerpt($limited_characters);
+    echo $excerpt . "[...]";
 }
 
 function tevent_more_button() {
-    $more = '<a href="%1$s">%2$s</a>';
+    $more = '<a href="%1$s" >%2$s</a>';
     if( !is_single() ) {
         $more = sprintf(
             $more,
@@ -97,38 +97,6 @@ function tevent_more_button() {
         );
     };
     echo $more;
-}
-
-function tevent_get_post_terms( $taxonomy ) {
-
-    $the_post_id = get_the_ID();
-    $terms = wp_get_post_terms( $the_post_id, $taxonomy );
-    
-    return $terms;
-
-}
-
-function tevent_pagination() {
-
-    // Allowed html 
-
-    $allowed_html = [
-        "span" => [
-            "class" => []
-        ],
-        "a" => [
-            "class" => [],
-            "href" => []
-        ]
-    ];
-    
-    // What should be before the page number
-    $args = [
-        'before_page_number' => '<span>',
-        'after_page_number' => '</span>'
-    ];
-    // Printing the pagination
-    printf("<nav class='pagination'>%s</nav>", wp_kses( paginate_links( $args ), $allowed_html ));
 }
 
 ?>
