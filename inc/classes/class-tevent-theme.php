@@ -3,6 +3,7 @@
 namespace TEVENT_THEME\inc;
 use TEVENT_THEME\inc\Assets;
 use TEVENT_THEME\inc\Menus;
+use TEVENT_THEME\inc\Meta_box;
 
 use TEVENT_THEME\Inc\Traits\Singleton;
 
@@ -14,6 +15,7 @@ class TEVENT_THEME {
         Assets::get_instance();
         Menus::get_instance();
         Sidebars::get_instance();
+        Meta_box::get_instance();
 
         $this->set_hooks();
     }
