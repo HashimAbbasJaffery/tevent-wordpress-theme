@@ -15,6 +15,11 @@ class Sidebars {
 
     public function set_hooks() {
         add_action( "widgets_init", [ $this, "register_sidebars" ] );
+        add_action( "widgets_init", [ $this, "register_clock_widget" ] );
+    }
+
+    public function register_clock_widget() {
+        register_widget("TEVENT_THEME\inc\Clock_Widget");
     }
 
     public function register_sidebars() {

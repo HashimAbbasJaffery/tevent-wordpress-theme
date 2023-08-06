@@ -955,7 +955,8 @@ footer {
 .categories {
     margin-bottom: 70px;
 }
-.widget_block h2 {
+.widget_block h2,
+.widget_clock_widget h2 {
     font-size: 20px;
     font-family: "Raleway", "sans-serif";
     text-transform: uppercase;

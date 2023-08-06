@@ -36,11 +36,13 @@ class Assets {
         wp_register_script( "font-awesome", "https://kit.fontawesome.com/3a7e8b6e65.js" );
         wp_register_script( "bootstrap-script", "https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js", [ "jquery-file" ] );
         wp_register_script( "jquery-file", "https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" );
-
+        wp_register_script( "main-js", TEMPLATE_DIRECTORY_URI . "/assets/main.js" );
+        
         wp_enqueue_script( "font-awesome" );
         wp_enqueue_script( "bootstrap-script" );
         wp_deregister_script( "jquery" );
         wp_enqueue_script( "jquery-file" );
+        wp_enqueue_script( "main-js" );
     }
 }
 
