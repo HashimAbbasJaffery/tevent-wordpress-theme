@@ -24,11 +24,12 @@ class Assets {
         wp_register_style( "main-css", get_stylesheet_uri(), [ "reset-css" ], filemtime( TEMPLATE_DIRECTORY . "/style.css" ) );
         wp_register_style( "reset-css", TEMPLATE_DIRECTORY_URI . "/assets/styles/reset.css", [],  filemtime( TEMPLATE_DIRECTORY . "/assets/styles/reset.css") );
         wp_register_style( "bootstrap", TEMPLATE_DIRECTORY_URI . "/assets/styles/bootstrap.css", [], false);
-
+        wp_register_style( "google-fonts", TEMPLATE_DIRECTORY_URI . "/assets/fonts/font.css");
 
         wp_enqueue_style( "reset-css" );
         wp_enqueue_style( "main-css" );
         wp_enqueue_style( "bootstrap" );
+        wp_enqueue_style( "google-fonts" );
 
     }
 

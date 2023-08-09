@@ -1,6 +1,9 @@
 const path = require("path");
 const extractCssPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const cssnano = require("cssnano");
 
 const JS_DIR = path.resolve(__dirname, "js");
 const BUILD = path.resolve(__dirname, "build");
@@ -30,10 +33,11 @@ const rules = [
 
     // Rule for the scss
     {
-        test: /\.scss$/,
+        test: /\.css$/,
         exclude: /node_modules/,
         use: [
             extractCssPlugin.load,
+            "style-loader",
             "css-loader"
         ] 
     },
@@ -63,6 +67,9 @@ const plugins = argv => {
         }),
         new extractCssPlugin({
             filename: "css/[name].css"
+        }),
+        new OptimizeCssAssetsPlugin({
+            cssProcessor: cssnano
         })
     ]
 }
@@ -73,6 +80,15 @@ module.exports = ( env, argv ) => {
         output: output,
         module: {
             rules: rules
+        },
+        optimization: {
+            minimizer: [
+                new UglifyJsPlugin({
+                    cache: false,
+                    sourceMap: true,
+                    parallel: true 
+                })
+            ]
         },
         plugins: plugins( argv )
     }

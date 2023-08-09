@@ -198,7 +198,7 @@ header {
     font-weight: normal;
 }
 .features ul {
-    list-style-image: url("../images/checkmark.png");
+    /* list-style-image: url("../images/checkmark.png"); */
     list-style-type: circle;
     margin-right: 70px;
 }
@@ -778,17 +778,17 @@ header {
     margin-bottom: 16px;
 }
 #name-field {
-    background-image: url(../images/user.png);
+    /* background-image: url(../images/user.png); */
     background-repeat: no-repeat;
     background-position: 10px;
 }
 #email-field {
-    background-image: url(../images/envelope.png);
+    /* background-image: url(../images/envelope.png); */
     background-repeat: no-repeat;
     background-position: 10px;
 }
 #subject-field {
-    background-image: url(../images/subject.png);
+    /* background-image: url(../images/subject.png); */
     background-repeat: no-repeat;
     background-position: 10px;
 }
@@ -1404,4 +1404,28 @@ footer {
 .page-numbers:hover:not(.current) {
     color: white;
     background-color: #e12a6e;
+}
+
+/********************** GUTENBERG BLOCKS ******************/
+.wp-block-button__link {
+    background: linear-gradient(90deg, rgba(251,75,56,1) 0%, rgba(225,42,109,1) 100%);
+    color: white;
+    border-radius: 4px;
+    font-family: "Raleway";
+}
+.wp-block-button__link:hover {
+    background: linear-gradient(90deg, rgba(225,42,109,1) 0%, rgba(251,75,56,1) 100%);
+    color: white;
+}
+blockquote.wp-block-quote {
+    border-left: 7px solid rgba(225,42,109,1);
+}
+.wp-block-quote__citation {
+    background: rgba(225,42,109,0.5);
+    color: white;
+    border-radius: 2px;
+    padding: 2px 0px 2px 10px;
+}
+hr.wp-block-separator {
+    background: rgba(225,42,109,1)
 }
