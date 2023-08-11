@@ -1429,3 +1429,25 @@ blockquote.wp-block-quote {
 hr.wp-block-separator {
     background: rgba(225,42,109,1)
 }
+.wp-block-cover {
+    position: relative;
+}
+.countdown {
+    margin: 0 auto;
+}
+.wp-block-cover {
+    padding: 50px 50px;
+    margin-bottom: 40px;
+}
+#countdown-timer .wp-block-columns {
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+.wp-block-cover .wp-block-heading {
+    margin-bottom: 60px;
+    font-weight: bolder;
+}
+.wp-block-cover {
+    position: relative;
+}
