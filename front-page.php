@@ -1,32 +1,10 @@
 <?php get_template_part("template_parts/header"); ?>
     <main id="content">
-            <section id="banner">
-                <div class="container">
-                    <div class="banner-detail">
-                        <p>a meetup and conference by</p>
-                        <h1>online community</h1>
-                        <button>buy ticket now</button>
-                    </div>
-                    <div class="countdown-timer">
-                        <div class="countdown countdown-days">
-                            <p>days</p>
-                            <p>20</p>
-                        </div>
-                        <div class="countdown countdown-hours">
-                            <p>hours</p>
-                            <p>11</p>
-                        </div>
-                        <div class="countdown countdown-minutes">
-                            <p>minutes</p>
-                            <p>21</p>
-                        </div>
-                        <div class="countdown countdown-seconds">
-                            <p>seconds</p>
-                            <p>42</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <?php if( have_posts() ): ?>
+                <?php while( have_posts() ) : the_post() ?>
+                    <?php the_content(); ?>
+                <?php endwhile; ?>
+            <?php endif; ?>
             <div class="sticky-timer">
                 <div class="container">
                     <p>Event ticket purchasing deadline finishing in: <br /><span>20 days</span>, <span>11 hours</span>, <span>21 minutes</span>, <span>42 seconds</span></p>

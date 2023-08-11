@@ -14,6 +14,7 @@ class TEVENT_THEME {
         Assets::get_instance();
         Menus::get_instance();
         Sidebars::get_instance();
+        Block_pattern::get_instance();
 
         $this->set_hooks();
     }
@@ -49,7 +50,9 @@ class TEVENT_THEME {
         add_theme_support( "editor-styles" );
 
         add_editor_style( "editor.css" );
-        
+
+        remove_theme_support( 'core-block-patterns' );
+
     }
 
 }
